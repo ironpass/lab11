@@ -28,7 +28,7 @@ public class StudentApp {
 			if (filter.test(s)) 
 				action.accept(s);
 		}
-		
+//		students.stream().filter(filter).sorted(sorter).forEach(action);
 	}
 
 	public static void main(String[] args) {
