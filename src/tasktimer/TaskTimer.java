@@ -15,15 +15,13 @@ import java.util.concurrent.atomic.*;  // hack, using AtomicInteger as accumulat
  */
 public class TaskTimer
 {
-    private static String DICTIONARY = "wordlist.txt";
     /**
      * Process all the words in a file using Scanner to read and parse input.
      * Display summary statistics and elapsed time.
      */
     public static void task1() {
         // initialize: open the words file as InputStream
-        InputStream instream = TaskTimer.class.getClassLoader().getResourceAsStream(DICTIONARY);
-        Scanner in = new Scanner(instream);
+        Scanner in = new Scanner(Dictionary.getWordsAsStream());
         
         out.println("Starting task: read words using Scanner and a while loop");
         long starttime = System.nanoTime();
@@ -48,10 +46,9 @@ public class TaskTimer
      */
     public static void task2( ) {
         // initialize: open the words file as InputStream
-        InputStream instream = TaskTimer.class.getClassLoader().getResourceAsStream(DICTIONARY);
         BufferedReader br = null;
         try {
-            br = new BufferedReader( new InputStreamReader(instream) );
+            br = new BufferedReader( new InputStreamReader(Dictionary.getWordsAsStream()) );
         } catch (Exception ex) {
             out.println("Could not open dictionary: "+ex.getMessage());
             return;
@@ -91,10 +88,9 @@ public class TaskTimer
      */
     public static void task3( ) {
         // initialize: open the words file as InputStream
-        InputStream instream = TaskTimer.class.getClassLoader().getResourceAsStream(DICTIONARY);
         BufferedReader br = null;
         try {
-            br = new BufferedReader( new InputStreamReader(instream) );
+            br = new BufferedReader( new InputStreamReader(Dictionary.getWordsAsStream()) );
         } catch (Exception ex) {
             out.println("Could not open dictionary: "+ex.getMessage());
             return;
@@ -153,10 +149,9 @@ public class TaskTimer
      */
     public static void task4( ) {
         // initialize
-        InputStream instream = TaskTimer.class.getClassLoader().getResourceAsStream(DICTIONARY);
         BufferedReader br = null;
         try {
-            br = new BufferedReader( new InputStreamReader(instream) );
+            br = new BufferedReader( new InputStreamReader(Dictionary.getWordsAsStream()) );
         } catch (Exception ex) {
             out.println("Could not open dictionary: "+ex.getMessage());
             return;
@@ -199,10 +194,9 @@ public class TaskTimer
      */
     public static void task5( ) {
         // initialize
-        InputStream instream = TaskTimer.class.getClassLoader().getResourceAsStream(DICTIONARY);
         BufferedReader br = null;
         try {
-            br = new BufferedReader( new InputStreamReader(instream) );
+            br = new BufferedReader( new InputStreamReader(Dictionary.getWordsAsStream()) );
         } catch (Exception ex) {
             out.println("Could not open dictionary: "+ex.getMessage());
             return;
@@ -230,10 +224,9 @@ public class TaskTimer
      */
     public static void task6( ) {
         // initialize
-        InputStream instream = TaskTimer.class.getClassLoader().getResourceAsStream(DICTIONARY);
         BufferedReader br = null;
         try {
-            br = new BufferedReader( new InputStreamReader(instream) );
+            br = new BufferedReader( new InputStreamReader(Dictionary.getWordsAsStream()) );
         } catch (Exception ex) {
             out.println("Could not open dictionary: "+ex.getMessage() );
             return;
