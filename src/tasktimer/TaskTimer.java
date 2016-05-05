@@ -19,10 +19,8 @@ public class TaskTimer
      * Process all the words in a file using Scanner to read and parse input.
      * Display summary statistics and elapsed time.
      */
+	static Scanner in = new Scanner(Dictionary.getWordsAsStream());
     public static void task1() {
-        // initialize: open the words file as InputStream
-        Scanner in = new Scanner(Dictionary.getWordsAsStream());
-        
         out.println("Starting task: read words using Scanner and a while loop");
         long starttime = System.nanoTime();
         // perform the task
@@ -251,12 +249,20 @@ public class TaskTimer
         
     /** Run all the tasks. */
     public static void main(String [] args) {
-        task1();
-        task2();
-        task3();
-        task4();
-        task5();
-        task6();
+        execAndPrint(new Task1());
+        execAndPrint(new Task2());
+        execAndPrint(new Task3());
+        execAndPrint(new Task4());
+        execAndPrint(new Task5());
+        execAndPrint(new Task6());
+    }
+    
+    public static void execAndPrint(Runnable Task) {
+    	out.println(Task.toString());
+    	long starttime = System.nanoTime();
+    	Task.run();
+    	long stoptime = System.nanoTime();
+    	out.printf("Elapsed time is %f sec\n",(stoptime - starttime)*1.0E-9 );
     }
     
 }
